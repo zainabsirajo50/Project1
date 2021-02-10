@@ -1,24 +1,34 @@
 import java.util.Scanner;
-import java.util.Random;
+public class MakeChange {
 
-class AnswerYesOrNo {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner(System.in);
+		int quarters, dimes, nickels, cents;
+		int whatsLeft, total;
+		
+		System.out.print("How many cents do you have?");
+		total = keyboard.nextInt();
+		
+		quarters = total / 25;
+		whatsLeft = total % 25;
+		
+		dimes = whatsLeft / 10;
+		whatsLeft = whatsLeft % 10;
+		
+		nickels = whatsLeft / 5;
+		whatsLeft = whatsLeft % 5;
+		
+		cents = whatsLeft;
+				
+		System.out.println();
+		System.out.println("From " + total + " cents you get");
+		System.out.println(quarters + " quarters");
+		System.out.println(dimes + " dimes");
+		System.out.println(nickels + " nickels");
+		System.out.println(cents + " cents");
 
-  public static void main(String args[]) {
-    Scanner keyboard = new Scanner(System.in);
-    Random myRandom = new Random();
-    int randomNumber;
+		keyboard.close();
+	}
 
-    System.out.print("Type your question, my child:  ");
-    keyboard.nextLine();
-
-    randomNumber = myRandom.nextInt(10) + 1;
-
-    if (randomNumber > 5) {
-      System.out.println("Yes. Isn't it obvious?");
-    } else {
-      System.out.println("No, and don't ask again.");
-    }
-
-    keyboard.close();
-  }
 }
